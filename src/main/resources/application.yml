@@ -25,3 +25,11 @@ astra.db:
   keyspace: <keyspace-name>
   application-token: <token>
 
+datadump.location:
+  author: <data-dump-path-for-author-data>
+  works: <data-dump-path-for-books-data>
+
+logging:
+  level:
+    root: info
+    io.akikr.betterreadsdataloader: info
