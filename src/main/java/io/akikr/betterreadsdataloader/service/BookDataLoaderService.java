@@ -163,5 +163,9 @@ public class BookDataLoaderService
         {
             log.error("Error occurred while reading the lines in works/book-data-dump file: " + e.getMessage());
         }
+        finally
+        {
+            log.info("Book's data service completed !!");
+        }
     }
 }

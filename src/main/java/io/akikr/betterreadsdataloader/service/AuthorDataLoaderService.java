@@ -82,5 +82,9 @@ public class AuthorDataLoaderService
         {
             log.error("Error occurred while reading the lines in author-data-dump file: " + e.getMessage());
         }
+        finally
+        {
+            log.info("Author's data service completed !!");
+        }
     }
 }
