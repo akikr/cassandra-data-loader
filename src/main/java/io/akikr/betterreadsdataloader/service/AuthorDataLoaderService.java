@@ -50,7 +50,7 @@ public class AuthorDataLoaderService
     public void initAuthors()
     {
         log.info("Author's data initializer started !!");
-        log.info("Reading the author data from : " + authorDataDumpLocation);
+        log.debug("Reading the author data from : " + authorDataDumpLocation);
         Path path = Paths.get(authorDataDumpLocation);
 
         try (Stream<String> lines = Files.lines(path))

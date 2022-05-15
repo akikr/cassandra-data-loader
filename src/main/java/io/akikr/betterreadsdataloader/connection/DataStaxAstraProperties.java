@@ -9,7 +9,7 @@ import java.io.File;
 import java.nio.file.Path;
 
 /**
- * @implNote : The DataStaxAstra properties loader to connect to Cassandra database.
+ * @implNote The DataStaxAstra properties loader to connect to Cassandra database.
  * @author ankit
  * @since 1.0
  */
@@ -20,7 +20,7 @@ public class DataStaxAstraProperties
 {
 
     /**
-     * @implNote : secure-connect.zip bundle containing credentials and files that is needed to connect to data-stax-astra
+     * @implNote secure-connect.zip bundle containing credentials and files that is needed to connect to data-stax-astra
      */
     private File secureConnectBundle;
 
@@ -30,7 +30,8 @@ public class DataStaxAstraProperties
      * the secure-connect file provided by DataStaxAstra.
      */
     @Bean
-    public CqlSessionBuilderCustomizer sessionBuilderCustomizer(DataStaxAstraProperties dataStaxAstraProperties) {
+    public CqlSessionBuilderCustomizer sessionBuilderCustomizer(DataStaxAstraProperties dataStaxAstraProperties)
+    {
         Path bundlePath = dataStaxAstraProperties.getSecureConnectBundle().toPath();
         return builder -> builder.withCloudSecureConnectBundle(bundlePath);
     }

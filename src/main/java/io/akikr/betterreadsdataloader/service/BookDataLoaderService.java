@@ -62,7 +62,7 @@ public class BookDataLoaderService
     public void initWorks()
     {
         log.info("Book's data initializer started !!");
-        log.info("Reading the book data from : " + bookDataDumpLocation);
+        log.debug("Reading the book data from : " + bookDataDumpLocation);
         Path path = Paths.get(bookDataDumpLocation);
         // To format the date of type: 2009-12-11T01:58:39.514198 => pattern: yyyy-MM-dd'T'HH:mm:ss.SSSSSS
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
