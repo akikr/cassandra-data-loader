@@ -1,4 +1,4 @@
-package io.akikr.betterreadsdataloader.connection;
+package io.akikr.betterreadsdataloader.db.connection;
 
 import lombok.Data;
 import org.springframework.boot.autoconfigure.cassandra.CqlSessionBuilderCustomizer;
