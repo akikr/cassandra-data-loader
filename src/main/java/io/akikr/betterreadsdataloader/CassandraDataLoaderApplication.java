@@ -8,6 +8,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import java.io.File;
 import java.nio.file.Paths;
+import java.util.Arrays;
 
 /**
  * @apiNote Main class for CassandraDataLoaderApplication
@@ -46,16 +47,11 @@ public class CassandraDataLoaderApplication
 
 	public static void main(String[] args)
 	{
+		log.info("CassandraDataLoaderApplication started with args: " + Arrays.toString(args) );
 		ConfigurableApplicationContext context = SpringApplication.run(CassandraDataLoaderApplication.class, args);
 
 		// Run the CassandraDataLoaderService
 		CassandraDataLoaderService cassandraDataLoaderService = context.getBean(CassandraDataLoaderService.class);
 		cassandraDataLoaderService.run();
-
-		// Exit application after all data loader services are completed
-		System.exit(SpringApplication.exit(context, () -> {
-			log.info("Exiting CassandraDataLoaderApplication !!");
-			return 0;
-		}));
 	}
 }
