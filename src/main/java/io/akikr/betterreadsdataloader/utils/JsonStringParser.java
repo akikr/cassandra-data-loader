@@ -20,12 +20,12 @@ public class JsonStringParser
 	 */
 	public JSONObject getJSONObjectFromString(String jsonString)
 	{
-		JSONObject jsonObject = null;
+		JSONObject jsonObject;
 		try {
 			jsonObject = new JSONObject(jsonString);
 		} catch (JSONException e) {
 			log.error("Error occurred while creating the JSON-Object from JSON-String : " + jsonString + "\n" + e.getMessage());
-			e.printStackTrace();
+			return new JSONObject();
 		}
 		return jsonObject;
 	}
